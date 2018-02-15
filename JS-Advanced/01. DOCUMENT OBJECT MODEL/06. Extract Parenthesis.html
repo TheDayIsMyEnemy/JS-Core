@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extract Parenthesis</title>
+</head>
+<body>
+<script>
+    function solve(id) {
+        let element = document.getElementById(id).textContent;
+        let myRe = /\((.+)\)/g;
+        let myArr;
+        let result = [];
+        while(myArr = myRe.exec(element)){
+            result.push(myArr[1]);
+        }
+        return result.join("; ");
+    }
+</script>
+</body>
+</html>

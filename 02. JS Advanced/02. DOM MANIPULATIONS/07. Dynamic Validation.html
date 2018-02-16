@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Dynamic Validation</title>
+    <style>.error { border: 2px solid red; }</style>
+</head>
+<body onload="validate()">
+<label for="email">Enter email:</label>
+<input id="email" type="text"/>
+<script>
+    function validate() {
+        var re = /^[a-z]+@[a-z]+\.[a-z]+$/;
+        var input = document.getElementById('email');
+
+        input.addEventListener('change', function () {
+            if(!re.test(input.value)){
+                input.className = 'error';
+            }
+            else{
+                input.removeAttribute('class');
+            }
+        })
+    }
+</script>
+</body>
+</html>

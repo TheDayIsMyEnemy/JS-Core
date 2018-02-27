@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<input type="text" id="num1" />
+<input type="text" id="num2" />
+<input type="text" id="result" readonly />
+<br>
+<button id="sumButton" onclick="sum()">
+    Sum</button>
+<button id="subtractButton">
+    Subtract</button>
+<script>
+    function solution(){
+        let e1 , e2, re;
+        return {
+            init: function (selector1, selector2, resultSelector) {
+                e1= $(selector1);
+                e2 = $(selector2);
+                re = $(resultSelector);
+            },
+            add: function () {
+                re.val(Number(e1.val()) +  Number(e2.val()));
+            },
+            subtract: function () {
+                re.val(Number(e1.val()) -  Number(e2.val()));
+            }
+        }
+    }
+</script>
+</body>
+</html>

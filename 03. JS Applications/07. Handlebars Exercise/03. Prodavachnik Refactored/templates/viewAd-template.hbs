@@ -1,0 +1,31 @@
+<section id="viewAds" class="viewAds">
+    <h1 class="titleForm">Advertisements</h1>
+    <div id="ads" class="ads">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Publisher</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Date Published</th>
+                <th>Action</th>
+            </tr>
+            {{#each ads}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td>{{date}}</td>
+                <td>
+                    <a href="#" onclick="incrementViews({{json this}})">[Read More]</a>
+                    {{#if isOwner}}
+                    <a href="#" onclick="deleteAd({{json this}})">[Delete]</a>
+                    <a href="#" onclick="showEditAdView({{json this}})">[Edit]</a>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</section>
